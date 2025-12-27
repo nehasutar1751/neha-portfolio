@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neha Sutar | Programmer Card</title>
+    <style>
+        /* 1. Basic Reset & Background */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        /* 2. The Card Container */
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Hover Animation for Card */
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 3. Profile Image Placeholder */
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: #764ba2;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* 4. Text Styling */
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        p.role {
+            font-size: 1rem;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        /* 5. Skills Tags */
+        .skills {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: #fff;
+            color: #764ba2;
+            cursor: default;
+        }
+
+        /* 6. Action Button */
+        .btn {
+            background: #fff;
+            color: #764ba2;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        /* 7. Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="profile-img">👩‍💻</div>
+        <h1 id="userName">Neha Sutar</h1>
+        <p class="role">Aspiring Full-Stack Developer</p>
+        
+        <div class="skills">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Responsive Design</span>
+        </div>
+
+        <button class="btn" onclick="sayHello()">Say Hello!</button>
+        
+        <p id="message" style="margin-top: 20px; font-size: 0.9rem; height: 20px;"></p>
+    </div>
+
+    <script>
+        // Simple interactive function
+        function sayHello() {
+            const msg = document.getElementById('message');
+            const name = document.getElementById('userName').innerText;
+            
+            msg.innerText = "Hi! I'm " + name + ", welcome to my journey!";
+            
+            // Basic animation via JS
+            msg.style.opacity = 0;
+            setTimeout(() => {
+                msg.style.transition = "opacity 0.5s";
+                msg.style.opacity = 1;
+            }, 50);
+        }
+    </script>
+
+</body>
+</html>
